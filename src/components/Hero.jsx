@@ -142,7 +142,6 @@
 //   );
 // }
 
-
 import { useEffect, useRef } from "react";
 import { ChevronDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { artistInfo } from "../data/portfolioData";
@@ -171,10 +170,7 @@ export default function Hero() {
           ایمان
         </div>
 
-        {/* Premium Geometric Accent Lines */}
-        <div className="hidden lg:block absolute top-0 left-12 w-px h-full bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
-        <div className="hidden lg:block absolute top-0 right-12 w-px h-full bg-gradient-to-b from-transparent via-gold/15 to-transparent" />
-        <div className="absolute top-1/4 right-1/4 w-32 h-32 md:w-40 md:h-40 border border-gold/5 rotate-45 animate-spin [animation-duration:25s]" />
+        {/* Note: Golden accent lines and the rotating square box have been removed from here */}
 
         {/* Fine Noise Texture */}
         <div
@@ -185,7 +181,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Main Container - Reduced top padding by exactly 50% */}
+      {/* Main Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-10 md:pt-12 lg:pt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
         {/* Left Side: Professional Content */}
