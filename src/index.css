@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #f5ede0;
+    color: #1a1410;
+    font-family: 'Jost', sans-serif;
+  }
+}
+
+@font-face {
+  font-family: 'Aston Script';
+  src: url('./fonts/AstonScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+
+  .opacity-0-init {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5ede0;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9933a;
+  border-radius: 3px;
+}
+
+/* Arabic calligraphy font */
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+/* Page Loader */
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, rgb(201, 147, 58) 90%, #0000);
+  background:
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% { background-position: 0%   0%, 50%  50%, 100%  50%; }
+  40% { background-position: 0% 100%, 50%   0%, 100%  50%; }
+  60% { background-position: 0%  50%, 50% 100%, 100%   0%; }
+  80% { background-position: 0%  50%, 50%  50%, 100% 100%; }
+}
+
+/* Highlighted text color: RGB(201, 147, 58) = #c9933a = gold */
+::selection {
+  background-color: rgba(201, 147, 58, 0.25);
+  color: #1a1410;
+}
