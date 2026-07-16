@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,50 +10,32 @@ import Footer from "./components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
-    // Wait for page to fully load
-    const handleLoad = () => {
-      // Small extra delay so loader is visible and smooth
-      setTimeout(() => setLoading(false), 2000);
-    };
+    // Show the loader for ~2.5s, then fade it out smoothly before unmounting.
+    const fadeTimer = setTimeout(() => setIsFadingOut(true), 2500);
+    const removeTimer = setTimeout(() => setLoading(false), 3300); // 2500ms + 800ms fade
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
   }, []);
 
-  if (loading) {
-    return (
-      <div
-        style={{
-          position: "fixed",
-          inset: 0,
-          backgroundColor: "#1a1410",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 9999,
-        }}
-      >
-        <div className="loader" />
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Services />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      {loading && <Loader isFadingOut={isFadingOut} />}
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <About />
+        <Portfolio />
+        <Services />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
 
