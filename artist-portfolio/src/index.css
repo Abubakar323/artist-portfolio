@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -18,6 +18,65 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+@layer utilities {
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+
+  .opacity-0-init {
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5ede0;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9933a;
+  border-radius: 3px;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+} */
+
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Definition */
+@font-face {
+  font-family: 'Aston Script';
+  /* 'public' path se hata diya gaya hai aur space ki jagah encode/proper path rakha hai */
+  src: url('/font/Aston Script.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #f5ede0;
+    color: #1a1410;
+    font-family: 'Jost', sans-serif;
+  }
 }
 
 @layer utilities {
