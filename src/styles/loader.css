@@ -32,7 +32,7 @@
 .loader-blob-purple {
   width: min(50vw, 480px);
   height: min(50vw, 480px);
-  background: #8b5cf6;
+  background: rgb(var(--c-primary-500));
   top: -10%;
   left: -10%;
   animation: loader-blob-float-a 8s ease-in-out infinite;
@@ -41,7 +41,7 @@
 .loader-blob-cyan {
   width: min(45vw, 420px);
   height: min(45vw, 420px);
-  background: #22d3ee;
+  background: rgb(var(--c-secondary-400));
   bottom: -12%;
   right: -8%;
   animation: loader-blob-float-b 9s ease-in-out infinite;
@@ -97,8 +97,8 @@
 .loadingspinner #square1 {
   left: calc(0 * var(--offset));
   top: calc(0 * var(--offset));
-  background: #8b5cf6;
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.7);
+  background: rgb(var(--c-primary-500));
+  box-shadow: 0 0 16px rgb(var(--c-primary-500) / 0.7);
   animation:
     square1 var(--duration) var(--delay) var(--timing-function) infinite,
     squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
@@ -107,8 +107,8 @@
 .loadingspinner #square2 {
   left: calc(0 * var(--offset));
   top: calc(1 * var(--offset));
-  background: #ec4899;
-  box-shadow: 0 0 16px rgba(236, 72, 153, 0.7);
+  background: rgb(var(--c-tertiary-500));
+  box-shadow: 0 0 16px rgb(var(--c-tertiary-500) / 0.7);
   animation:
     square2 var(--duration) var(--delay) var(--timing-function) infinite,
     squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
@@ -117,8 +117,8 @@
 .loadingspinner #square3 {
   left: calc(1 * var(--offset));
   top: calc(1 * var(--offset));
-  background: #22d3ee;
-  box-shadow: 0 0 16px rgba(34, 211, 238, 0.7);
+  background: rgb(var(--c-secondary-400));
+  box-shadow: 0 0 16px rgb(var(--c-secondary-400) / 0.7);
   animation:
     square3 var(--duration) var(--delay) var(--timing-function) infinite,
     squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
@@ -127,8 +127,8 @@
 .loadingspinner #square4 {
   left: calc(2 * var(--offset));
   top: calc(1 * var(--offset));
-  background: #8b5cf6;
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.7);
+  background: rgb(var(--c-primary-500));
+  box-shadow: 0 0 16px rgb(var(--c-primary-500) / 0.7);
   animation:
     square4 var(--duration) var(--delay) var(--timing-function) infinite,
     squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
@@ -137,8 +137,8 @@
 .loadingspinner #square5 {
   left: calc(3 * var(--offset));
   top: calc(1 * var(--offset));
-  background: #ec4899;
-  box-shadow: 0 0 16px rgba(236, 72, 153, 0.7);
+  background: rgb(var(--c-tertiary-500));
+  box-shadow: 0 0 16px rgb(var(--c-tertiary-500) / 0.7);
   animation:
     square5 var(--duration) var(--delay) var(--timing-function) infinite,
     squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
