@@ -394,8 +394,6 @@
 
 
 
-
-
 import { useEffect, useRef } from "react";
 import { ChevronDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { artistInfo } from "../data/portfolioData";
@@ -406,7 +404,6 @@ export default function Hero() {
   useEffect(() => {
     const items = heroRef.current?.querySelectorAll(".anim-item");
     items?.forEach((el, i) => {
-      // Dynamic staggered entry delays smoothly attached
       el.style.animationDelay = `${i * 0.12 + 0.2}s`;
       el.classList.add("animate-fade-up");
     });
@@ -416,8 +413,7 @@ export default function Hero() {
     <section
       id="home"
       ref={heroRef}
-      /* FIX: Navbar overlay se bachne ke liye top padding (pt-28/lg:pt-36) set kar di hai */
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink pt-28 lg:pt-36 pb-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-ink pt-32 lg:pt-40 pb-16"
     >
       {/* Decorative Background Overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -446,8 +442,8 @@ export default function Hero() {
         {/* Left Side: Professional Content */}
         <div className="lg:col-span-7 text-left flex flex-col justify-center">
           
-          {/* Pre-title */}
-          <div className="anim-item opacity-0 flex items-center gap-2 text-gold tracking-[0.35em] text-xs uppercase mb-2 font-body font-medium">
+          {/* Pre-title Badge */}
+          <div className="anim-item opacity-0 flex items-center gap-2 text-gold tracking-[0.35em] text-xs uppercase mb-2 font-body font-medium mt-2">
             <Sparkles size={14} className="text-gold/80 animate-pulse" />
             <span>Visual Artist & Calligrapher</span>
           </div>
