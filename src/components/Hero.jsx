@@ -142,7 +142,7 @@ const Hero = () => {
       {/* Background Aurora Effect */}
       <DynamicBackground mouseX={mousePosition.x} mouseY={mousePosition.y} />
 
-      <div className="container relative z-10 mx-auto flex min-h-screen flex-col items-center justify-center px-6 py-20 lg:flex-row lg:py-0">
+      <div className="container relative z-10 mx-auto flex min-h-screen flex-col items-center justify-center px-6 pt-16 pb-8 lg:pt-20 lg:pb-0 lg:flex-row">
         
         {/* Left Column: Typography & Content */}
         <div className="flex w-full flex-col items-start justify-center lg:w-1/2 lg:pr-12">
