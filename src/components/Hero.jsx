@@ -620,7 +620,6 @@ const Hero = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      /* FIXED PADDING AND SCREEN HEIGHT FLEX FLOW */
       className="relative min-h-screen w-full overflow-hidden bg-[#050505] font-['Inter'] flex flex-col justify-between pt-28 pb-16 lg:pt-32 lg:pb-12"
     >
       {/* MASH PATTERN BACKGROUND */}
@@ -696,10 +695,11 @@ const Hero = () => {
       {/* Background Aurora Effect */}
       <DynamicBackground mouseX={mousePosition.x} mouseY={mousePosition.y} />
 
-      <div className="container relative z-10 mx-auto my-auto flex flex-col items-center justify-center px-6 lg:flex-row">
+      {/* FIXED CONTAINER: Added responsive px padding to create side spacing */}
+      <div className="container relative z-10 mx-auto my-auto flex flex-col items-center justify-between px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 lg:flex-row">
         
         {/* Left Column: Typography & Content */}
-        <div className="flex w-full flex-col items-start justify-center lg:w-1/2 lg:pr-12">
+        <div className="flex w-full flex-col items-start justify-center lg:w-1/2 lg:pr-8">
           
           {/* Badge */}
           <motion.div
@@ -823,7 +823,7 @@ const Hero = () => {
         </div>
 
         {/* Right Column: Interactive 3D Art Frame */}
-        <div className="relative mt-8 flex w-full items-center justify-center lg:mt-0 lg:w-1/2 px-4 sm:px-0">
+        <div className="relative mt-8 flex w-full items-center justify-center lg:mt-0 lg:w-1/2">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
             animate={controls}
@@ -876,7 +876,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Info Cards - Adjusted positioning */}
+              {/* Floating Info Cards */}
               <FloatingInfoCard
                 className="absolute -left-3 top-2 sm:-left-8 sm:top-8 md:-left-10 md:top-10"
                 delay={0.8}
